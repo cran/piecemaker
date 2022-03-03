@@ -43,9 +43,11 @@ validate_utf8 <- function(text) {
   Encoding(text[in_encoding_status]) <- "UTF-8"
 
   # Now try to coerce the leftovers to UTF-8.
-  text[!in_encoding_status] <- purrr::map_chr(
-    text[!in_encoding_status],
-    .coerce_to_utf8
+  text[!in_encoding_status] <- vapply(
+    X = text[!in_encoding_status],
+    FUN = .coerce_to_utf8,
+    FUN.VALUE = character(1),
+    USE.NAMES = FALSE
   )
 
   return(text)
@@ -53,7 +55,7 @@ validate_utf8 <- function(text) {
 
 #' Coerce to UTF8
 #'
-#' @param this_text Character scalar; a piece of text to attemp to coerce.
+#' @param this_text Character scalar; a piece of text to attempt to coerce.
 #'
 #' @return The text as UTF8.
 #' @keywords internal

@@ -11,10 +11,10 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 
 Tokenizers break text into pieces that are more usable by machine
 learning models. While writing
-[wordpiece](https://github.com/jonathanbratt/wordpiece) and
+[wordpiece](https://github.com/macmillancontentscience/wordpiece) and
 [morphemepiece](https://github.com/macmillancontentscience/morphemepiece),
-we found that many steps were shared between those package. This package
-provides those shared steps.
+we found that many steps were shared between those packages. This
+package provides those shared steps.
 
 ## Installation
 
@@ -22,8 +22,7 @@ You can install the released version of piecemaker from
 [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
-# Not yet.
-#install.packages("piecemaker")
+install.packages("piecemaker")
 ```
 
 And the development version from [GitHub](https://github.com/) with:
